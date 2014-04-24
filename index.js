@@ -17,7 +17,9 @@ function inflate(stream, options) {
   case '':
     return stream
   default:
-    throw new Error('Unsupported Content-Encoding: ' + encoding)
+    var err = new Error('Unsupported Content-Encoding: ' + encoding)
+    err.status = 415
+    throw err
   }
 
   return stream.pipe(zlib.Unzip(options))
