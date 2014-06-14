@@ -26,5 +26,8 @@ function inflate(stream, options) {
     throw err
   }
 
+  // no not pass-through encoding
+  delete options.encoding
+
   return stream.pipe(zlib.Unzip(options))
 }

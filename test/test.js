@@ -8,6 +8,26 @@ describe('inflate(stream, options)', function () {
     inflation.should.throw(/stream.*required/)
   })
 
+  it('should pass-through identity streams', function (done) {
+    var stream = createStream(new Buffer('identity!', 'utf-8'))
+    var string = 'identity!'
+    assertBuffer(inflation(stream), string, done)
+  })
+
+  it('should inflate gzip streams', function (done) {
+    var stream = createStream(new Buffer('1f8b080000000000000b4bcecf2d284a2d2e4e4d510400fb94f3640b000000', 'hex'))
+    var string = 'compressed!'
+    var opts = {encoding: 'gzip'}
+    assertBuffer(inflation(stream, opts), string, done)
+  })
+
+  it('should inflate deflate streams', function (done) {
+    var stream = createStream(new Buffer('789c4bcecf2d284a2d2e4e4d5104001b960457', 'hex'))
+    var string = 'compressed!'
+    var opts = {encoding: 'deflate'}
+    assertBuffer(inflation(stream, opts), string, done)
+  })
+
   describe('stream with headers', function () {
     it('should pass-through identity streams', function (done) {
       var stream = createStream(new Buffer('identity!', 'utf-8'))

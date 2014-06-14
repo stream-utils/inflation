@@ -1,3 +1,8 @@
+unreleased
+==========
+
+  * Fix specifying encoding in `options`
+
 1.0.1 / 2014-04-24
 ==================
 
