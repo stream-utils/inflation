@@ -1,5 +1,5 @@
-unreleased
-==========
+1.0.2 / 2014-06-13
+==================
 
   * Fix specifying encoding in `options`
 
