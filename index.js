@@ -4,6 +4,10 @@ var zlib = require('zlib')
 module.exports = inflate
 
 function inflate(stream, options) {
+  if (!stream) {
+    throw new TypeError('argument stream is required')
+  }
+
   options = options || {}
 
   var encoding = options.encoding
