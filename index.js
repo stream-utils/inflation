@@ -12,13 +12,13 @@ function inflate(stream, options) {
 
   var encoding = options.encoding
     || (stream.headers && stream.headers['content-encoding'])
-    || ''
+    || 'identity'
 
   switch (encoding) {
   case 'gzip':
   case 'deflate':
     break
-  case '':
+  case 'identity':
     return stream
   default:
     var err = new Error('Unsupported Content-Encoding: ' + encoding)

@@ -28,11 +28,19 @@ describe('inflate(stream, options)', function () {
     assertBuffer(inflation(stream, opts), string, done)
   })
 
+  it('should pass-through identity streams', function (done) {
+    var stream = createStream(new Buffer('identity!', 'utf-8'))
+    var string = 'identity!'
+    stream.headers = {}
+    assertBuffer(inflation(stream), string, done)
+  })
+
   describe('stream with headers', function () {
+
     it('should pass-through identity streams', function (done) {
       var stream = createStream(new Buffer('identity!', 'utf-8'))
       var string = 'identity!'
-      stream.headers = {}
+      stream.headers = {'content-encoding': 'identity'}
       assertBuffer(inflation(stream), string, done)
     })
 
