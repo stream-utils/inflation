@@ -1,7 +1,8 @@
 
-unreleased
+2.0.0 / 2016-04-09
 ==================
 
+  * Add `identity` support #14
   * Remove node v0.8 support
 
 1.0.2 / 2014-06-13
