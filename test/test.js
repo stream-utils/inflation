@@ -44,6 +44,13 @@ describe('inflate(stream, options)', function () {
       assertBuffer(inflation(stream), string, done)
     })
 
+    it('should pass-through utf-8 streams', function (done) {
+      var stream = createStream(new Buffer('identity!', 'utf-8'))
+      var string = 'identity!'
+      stream.headers = {'content-encoding': 'utf-8'}
+      assertBuffer(inflation(stream), string, done)
+    })
+
     it('should inflate gzip streams', function (done) {
       var stream = createStream(new Buffer('1f8b080000000000000b4bcecf2d284a2d2e4e4d510400fb94f3640b000000', 'hex'))
       var string = 'compressed!'
