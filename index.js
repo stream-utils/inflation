@@ -1,4 +1,3 @@
-
 var zlib = require('zlib')
 
 module.exports = inflate
@@ -11,19 +10,22 @@ function inflate(stream, options) {
   options = options || {}
 
   var encoding = options.encoding
-    || (stream.headers && stream.headers['content-encoding'])
+    || (stream.headers && stream.headers[ 'content-encoding' ])
     || 'identity'
 
+  encoding = encoding.toLowerCase()
+
   switch (encoding) {
-  case 'gzip':
-  case 'deflate':
-    break
-  case 'identity':
-    return stream
-  default:
-    var err = new Error('Unsupported Content-Encoding: ' + encoding)
-    err.status = 415
-    throw err
+    case 'gzip':
+    case 'deflate':
+      break
+    case 'identity':
+    case 'utf-8':
+      return stream
+    default:
+      var err    = new Error('Unsupported Content-Encoding: ' + encoding)
+      err.status = 415
+      throw err
   }
 
   // no not pass-through encoding
