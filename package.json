@@ -10,7 +10,8 @@
     "unzip",
     "inflate",
     "zlib",
-    "gunzip"
+    "gunzip",
+    "brotli"
   ],
   "devDependencies": {
     "istanbul": "0.2.10",

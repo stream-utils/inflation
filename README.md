@@ -20,6 +20,7 @@ Options:
 
 - `encoding` - The encoding of the stream (`gzip` or `deflate`).
   If not given, will look in `stream.headers['content-encoding']`.
+- `brotli` - [`BrotliOptions`](https://nodejs.org/api/zlib.html#class-brotlioptions) to use for Brotli decompression
 
 ## Example
 

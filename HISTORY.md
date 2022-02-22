@@ -1,3 +1,7 @@
+Unreleased
+==================
+
+  * Add Brotli support for Node v10.16.0 and newer
 
 2.0.0 / 2016-04-09
 ==================
