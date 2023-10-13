@@ -15,7 +15,7 @@
   ],
   "devDependencies": {
     "istanbul": "0.2.10",
-    "mocha": "~1.20.1",
+    "mocha": "^10.2.0",
     "readable-stream": "~1.0.27",
     "should": "4.0.4"
   },
@@ -23,9 +23,8 @@
     "node": ">= 0.8.0"
   },
   "scripts": {
-    "test": "mocha --reporter spec --bail test/",
-    "test-cov": "istanbul cover node_modules/mocha/bin/_mocha -- --reporter dot test/",
-    "test-travis": "istanbul cover node_modules/mocha/bin/_mocha --report lcovonly -- --reporter spec test/"
+    "test": "mocha --reporter spec --bail test/*.js",
+    "test-cov": "istanbul cover node_modules/mocha/bin/_mocha -- --reporter dot test/"
   },
   "files": [
     "index.js"
