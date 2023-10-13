@@ -2,6 +2,7 @@
 var Readable = require('readable-stream').Readable
 var inflation = require('..')
 var should = require('should')
+var zlib = require('zlib');
 
 describe('inflate(stream, options)', function () {
   it('should require stream argument', function () {
@@ -57,6 +58,29 @@ describe('inflate(stream, options)', function () {
       stream.headers = {'content-encoding': 'deflate'}
       assertBuffer(inflation(stream), string, done)
     })
+
+    if (zlib.createBrotliDecompress) {
+      it('should inflate brotli streams if supported', function (done) {
+        var stream = createStream(new Buffer('0b0580636f6d707265737365642103', 'hex'))
+        var string = 'compressed!'
+        stream.headers = {'content-encoding': 'br'}
+        assertBuffer(inflation(stream), string, done)
+      })
+    } else {
+      it('should throw an unsupported encoding error if brotli is not supported', function () {
+        var err
+        var stream = createStream(new Buffer('0b0580636f6d707265737365642103', 'hex'))
+        stream.headers = {'content-encoding': 'br'}
+        try {
+          inflation(stream)
+        } catch (e) {
+          err = e
+        }
+        should(err).be.ok
+        err.message.should.match(/Unsupported Content-Encoding/)
+        err.status.should.equal(415)
+      })
+   }
 
     it('should throw on unknown encoding', function () {
       var err
