@@ -1,8 +1,7 @@
 # inflation
 
 [![NPM version](https://badge.fury.io/js/inflation.svg)](http://badge.fury.io/js/inflation)
-[![Build Status](https://travis-ci.org/stream-utils/inflation.svg?branch=master)](https://travis-ci.org/stream-utils/inflation)
-[![Coverage Status](https://img.shields.io/coveralls/stream-utils/inflation.svg?branch=master)](https://coveralls.io/r/stream-utils/inflation)
+[![CI](https://github.com/stream-utils/inflation/actions/workflows/nodejs.yml/badge.svg)](https://github.com/stream-utils/inflation/actions/workflows/nodejs.yml)
 
 Automatically unzip an HTTP stream.
 
