@@ -1,4 +1,4 @@
-Unreleased
+2.1.0 / 2023-10-14
 ==================
 
   * Add Brotli support for Node v10.16.0 and newer
