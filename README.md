@@ -38,10 +38,10 @@ http.createServer(function (req, res) {
 
 ## Contributors
 
-|[<img src="https://avatars.githubusercontent.com/u/67512?v=4" width="100px;"/><br/><sub><b>dougwilson</b></sub>](https://github.com/dougwilson)<br/>|[<img src="https://avatars.githubusercontent.com/u/73755?v=4" width="100px;"/><br/><sub><b>bminer</b></sub>](https://github.com/bminer)<br/>|[<img src="https://avatars.githubusercontent.com/u/156269?v=4" width="100px;"/><br/><sub><b>fengmk2</b></sub>](https://github.com/fengmk2)<br/>|
-| :---: | :---: | :---: |
+|[<img src="https://avatars.githubusercontent.com/u/643505?v=4" width="100px;"/><br/><sub><b>jonathanong</b></sub>](https://github.com/jonathanong)<br/>|[<img src="https://avatars.githubusercontent.com/u/67512?v=4" width="100px;"/><br/><sub><b>dougwilson</b></sub>](https://github.com/dougwilson)<br/>|[<img src="https://avatars.githubusercontent.com/u/156269?v=4" width="100px;"/><br/><sub><b>fengmk2</b></sub>](https://github.com/fengmk2)<br/>|[<img src="https://avatars.githubusercontent.com/u/73755?v=4" width="100px;"/><br/><sub><b>bminer</b></sub>](https://github.com/bminer)<br/>|[<img src="https://avatars.githubusercontent.com/u/379606?v=4" width="100px;"/><br/><sub><b>ide</b></sub>](https://github.com/ide)<br/>|
+| :---: | :---: | :---: | :---: | :---: |
 
 
-This project follows the git-contributor [spec](https://github.com/xudafeng/git-contributor), auto updated at `Sat Oct 14 2023 12:55:08 GMT+0800`.
+This project follows the git-contributor [spec](https://github.com/xudafeng/git-contributor), auto updated at `Sat Oct 14 2023 13:02:29 GMT+0800`.
 
 <!-- GITCONTRIBUTOR_END -->
